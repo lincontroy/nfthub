@@ -78,9 +78,37 @@
 
                     @if(Auth::check())
                     <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
-                        <div class="icon-box">
+                        <!-- <div class="icon-box">
                             <a  class="btn btn-primary-alta btn-small" href="/home">Dashboard</a>
+                        </div><br> -->
+                        <div class="icon-box">
+                            <button  class="btn btn-primary-alta btn-small" onclick="copyURI(event)" title="click here to copy" href="{{url('register')}}/{{Auth::user()->referal_code}}">Referal code</button>
                         </div>
+                        
+                        <script>
+                        function copyURI(evt) {
+                            evt.preventDefault();
+                            navigator.clipboard.writeText(evt.target.getAttribute('href')).then(() => {
+                            /* clipboard successfully set */
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Referal code copied',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            }, () => {
+                            /* clipboard write failed */
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'error',
+                                title: 'Failed to copy',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            });
+                        }
+                        </script>
                     </div>
                     @else
                     <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
@@ -385,6 +413,7 @@
     <script src="{{url('assets/js/vendor/web3.min.js')}}"></script>
     <script src="{{url('assets/js/vendor/maralis.js')}}"></script>
     <script src="{{url('assets/js/vendor/nft.js')}}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @notifyJs
     <script>
 

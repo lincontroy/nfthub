@@ -29,6 +29,7 @@ Route::get('/ts', function () {
 
 Auth::routes();
 
+Route::get('register/{ref}', [App\Http\Controllers\Auth\RegisterController::class, 'index']);
 
 
 

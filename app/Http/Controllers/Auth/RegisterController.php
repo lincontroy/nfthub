@@ -63,6 +63,14 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
+
+    public function index(){
+
+        //this returns the user register view
+
+        return view('auth.register');
+
+    }
     protected function create(array $data)
     {
 
