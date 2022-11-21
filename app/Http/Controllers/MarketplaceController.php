@@ -25,11 +25,6 @@ class MarketplaceController extends Controller
     {
 
      
-
-       
-
-        // exit;
-
         //check if the buyer is equal to the seller and deny if true
         $code=$request->ref;
 
