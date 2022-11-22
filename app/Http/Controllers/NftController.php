@@ -15,94 +15,101 @@ class NftController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function getreferals($refcode){
+    public function getreferals($refcode)
+    {
 
         //get the number of referals brought by this user
 
-        $user=User::where('ref',$refcode)
-        ->where('status',1)
-        ->count();
+        $user = User::where('ref', $refcode)
+            ->where('status', 1)
+            ->count();
         return $user;
     }
 
-    public function addpricevalue(){
+    public function addpricevaluetier1()
+    {
         //get all nfts with price between 0-50usd
 
-        $tier1nfts=Nft::where('price','<=',env('Tier1'))->where('price','>=','0')->get();
+        $max = env('Tier1', 50);
 
+        $min = env('MinTier1', 0);
 
-        $owners=[];
-        $nftref=[];
-        $refcodes=[];
-        $refcount=[];
-        $nftprices=[];
+        $tier1nfts = Nft::where('price', '<=', intval($max))->where('price', '>=', intval($min))->get();
 
-        $finalprice=[];
+        // return $tier1nfts;
 
-        foreach($tier1nfts as $tier1nft){
-            
+        $owners = [];
+        $nftref = [];
+        $refcodes = [];
+        $refcount = [];
+        $nftprices = [];
+
+        $finalprice = [];
+
+        foreach ($tier1nfts as $tier1nft) {
+
             //get the owners of this nft
 
-            $owners[]=$tier1nft->owner;
+            $owners[] = $tier1nft->owner;
 
-            $nftref[]=$tier1nft->ref;
+            $nftref[] = $tier1nft->ref;
 
             //check the number of referals by ech of the users above
-            
+
         }
 
-        foreach($owners as $owner){
-            
+        foreach ($owners as $owner) {
+
             //get the number of referals by each user in the array
 
-            $refs=User::where('id',$owner)->get();
+            $refs = User::where('id', $owner)->get();
 
-            foreach($refs as $ref){
-                $refcodes[]=$ref->referal_code;
+            foreach ($refs as $ref) {
+                $refcodes[] = $ref->referal_code;
             }
-
-           
-
         }
 
-        foreach($refcodes as $refcode){
+        foreach ($refcodes as $refcode) {
+            $tier = 1;
 
-            $count=User::where('ref',$refcode)
-            ->where('status',1)
-            ->count();
+            $count = User::where('ref', $refcode)
+                ->where('status', 1)
+                ->count();
+
+            if ($count >= 10) {
+                $tier + 1;
+            }
 
             //since tuko tier 1 we need to add to add 1.0
-            
-            $refcount[]=('1'.'.'.$count);
+
+            $refcount[] = ($tier . '.' . $count);
 
             // $refcount[]=$count;
         }
 
 
-        foreach($nftref as $nftr){
+        foreach ($nftref as $nftr) {
 
-            $prices=Nft::where('ref',$nftr)->get();
+            $prices = Nft::where('ref', $nftr)->get();
 
-            foreach($prices as $price){
-
-
-
-                $nftprices[]=$price->price;
+            foreach ($prices as $price) {
 
 
+
+                $nftprices[] = $price->price;
             }
-
-
         }
 
-        function multiply($a, $b){
+        function multiply($a, $b)
+        {
             return $a * $b;
         }
 
-        function stuff($arrayOne, $arrayTwo){
+        function stuff($arrayOne, $arrayTwo)
+        {
             $computed = array();
-            for($index = 0; $index < count($arrayOne); $index++){
-              array_push($computed, multiply($arrayOne[$index], $arrayTwo[$index]));
+            for ($index = 0; $index < count($arrayOne); $index++) {
+                array_push($computed, multiply($arrayOne[$index], $arrayTwo[$index]));
             }
             return $computed;
         }
@@ -111,102 +118,326 @@ class NftController extends Controller
 
 
 
-        $finalprice=stuff($nftprices,$refcount);
+        $finalprice = stuff($nftprices, $refcount);
 
-        for($i=0;$i<sizeof($nftref);$i++){
+        for ($i = 0; $i < sizeof($nftref); $i++) {
 
-          
 
-            for($j=0;$j<sizeof($finalprice);$j++){
-                
 
-                $update=Nft::where('ref',$nftref[$i])->update(['price'=> $finalprice[$j]]);
+            // echo $nftref[$i] ?? null;
 
-                if($update){
-                    echo "updated";
-                }else{
-                    echo "Not updated";
-                }
+            //search for the nft in the database then update with the key same
+            $check = Nft::where('ref', $nftref[$i])->first();
 
-                
+            $update = $check->update(['price' => $finalprice[$i]]);
 
+            if ($update) {
+                echo "updated";
+            } else {
+                echo "Not updated";
             }
+        }
+    }
+
+    public function addpricevaluetier2()
+    {
+        //get all nfts with price between 51-100usd
+
+
+        $max = env('Tier2', 100);
+
+        $min = env('MinTier2', 51);
+
+
+        $tier1nfts = Nft::where('price', '<=', intval($max))
+            ->where('price', '>=', intval($min))
+            ->get();
+
+        // return $tier1nfts;
+
+
+        $owners = [];
+        $nftref = [];
+        $refcodes = [];
+        $refcount = [];
+        $nftprices = [];
+        $finalprice = [];
+
+        foreach ($tier1nfts as $tier1nft) {
+
+            //get the owners of this nft
+
+            $owners[] = $tier1nft->owner;
+
+            $nftref[] = $tier1nft->ref;
+
+            //check the number of referals by ech of the users above
 
         }
-        
-    } 
 
-    public function caller(){
+        foreach ($owners as $owner) {
+
+            //get the number of referals by each user in the array
+
+            $refs = User::where('id', $owner)->get();
+
+            foreach ($refs as $ref) {
+                $refcodes[] = $ref->referal_code;
+            }
+        }
+
+        foreach ($refcodes as $refcode) {
+
+            $tier = 2;
+
+            $count = User::where('ref', $refcode)
+                ->where('status', 1)
+                ->count();
+
+            if ($count >= 10) {
+                $tier + 1;
+            }
+
+            //since tuko tier 2 we need to add to add 2.0
+
+            $refcount[] = ($tier . '.' . $count);
+
+            // $refcount[]=$count;
+        }
+
+
+        foreach ($nftref as $nftr) {
+
+            $prices = Nft::where('ref', $nftr)->get();
+
+            foreach ($prices as $price) {
+
+
+
+                $nftprices[] = $price->price;
+            }
+        }
+
+        function multiply($a, $b)
+        {
+            return $a * $b;
+        }
+
+        function stuff($arrayOne, $arrayTwo)
+        {
+            $computed = array();
+            for ($index = 0; $index < count($arrayOne); $index++) {
+                array_push($computed, multiply($arrayOne[$index], $arrayTwo[$index]));
+            }
+            return $computed;
+        }
+
+
+
+
+
+        $finalprice = stuff($nftprices, $refcount);
+
+        for ($i = 0; $i < sizeof($nftref); $i++) {
+
+
+
+            // echo $nftref[$i] ?? null;
+
+            //search for the nft in the database then update with the key same
+            $check = Nft::where('ref', $nftref[$i])->first();
+
+            $update = $check->update(['price' => $finalprice[$i]]);
+
+            if ($update) {
+                echo "updated";
+            } else {
+                echo "Not updated";
+            }
+        }
+    }
+
+    public function addpricevaluetier3()
+    {
+        //get all nfts with price between 101-200usd
+
+        $max = env('Tier3', 200);
+
+        $min = env('MinTier3', 101);
+
+        $tier1nfts = Nft::where('price', '<=', intval($max))->where('price', '>=', intval($min))->get();
+
+        // return $tier1nfts;
+
+        $owners = [];
+        $nftref = [];
+        $refcodes = [];
+        $refcount = [];
+        $nftprices = [];
+
+        $finalprice = [];
+
+        foreach ($tier1nfts as $tier1nft) {
+
+            //get the owners of this nft
+
+            $owners[] = $tier1nft->owner;
+
+            $nftref[] = $tier1nft->ref;
+
+            //check the number of referals by ech of the users above
+
+        }
+
+        foreach ($owners as $owner) {
+
+            //get the number of referals by each user in the array
+
+            $refs = User::where('id', $owner)->get();
+
+            foreach ($refs as $ref) {
+                $refcodes[] = $ref->referal_code;
+            }
+        }
+
+        foreach ($refcodes as $refcode) {
+
+            $tier = 3;
+
+            $count = User::where('ref', $refcode)
+                ->where('status', 1)
+                ->count();
+
+            if ($count >= 10) {
+                $tier + 1;
+            }
+
+            //since tuko tier 3 we need to add to add 3.0
+
+            $refcount[] = ($tier . '.' . $count);
+
+            // $refcount[]=$count;
+        }
+
+
+        foreach ($nftref as $nftr) {
+
+            $prices = Nft::where('ref', $nftr)->get();
+
+            foreach ($prices as $price) {
+
+
+
+                $nftprices[] = $price->price;
+            }
+        }
+
+        function multiply($a, $b)
+        {
+            return $a * $b;
+        }
+
+        function stuff($arrayOne, $arrayTwo)
+        {
+            $computed = array();
+            for ($index = 0; $index < count($arrayOne); $index++) {
+                array_push($computed, multiply($arrayOne[$index], $arrayTwo[$index]));
+            }
+            return $computed;
+        }
+
+
+
+
+
+        $finalprice = stuff($nftprices, $refcount);
+
+        for ($i = 0; $i < sizeof($nftref); $i++) {
+
+
+
+            // echo $nftref[$i] ?? null;
+
+            //search for the nft in the database then update with the key same
+            $check = Nft::where('ref', $nftref[$i])->first();
+
+            $update = $check->update(['price' => $finalprice[$i]]);
+
+            if ($update) {
+                echo "updated";
+            } else {
+                echo "Not updated";
+            }
+        }
+    }
+
+    public function caller()
+    {
 
         return $this->getreferals("uirs1234");
-
     }
-    public function createnft(){
+    public function createnft()
+    {
 
         return view('create');
-
     }
-    function generateRandomString(int $n=0)
+    function generateRandomString(int $n = 0)
     {
-      $al = ['a','b','c','d','e','f','g','h','i','j','k'
-      , 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
-      'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E',
-      'F','G','H','I','J','K', 'L', 'M', 'N', 'O', 'P',
-      'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-      '0', '2', '3', '4', '5', '6', '7', '8', '9'];
-    
-      $len = !$n ? random_int(7, 12) : $n; // Chose length randomly in 7 to 12
-    
-      $ddd = array_map(function($a) use ($al){
-        $key = random_int(0, 60);
-        return $al[$key];
-      }, array_fill(0,$len,0));
-      return implode('', $ddd);
+        $al = [
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+            'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E',
+            'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+            'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+            '0', '2', '3', '4', '5', '6', '7', '8', '9'
+        ];
+
+        $len = !$n ? random_int(7, 12) : $n; // Chose length randomly in 7 to 12
+
+        $ddd = array_map(function ($a) use ($al) {
+            $key = random_int(0, 60);
+            return $al[$key];
+        }, array_fill(0, $len, 0));
+        return implode('', $ddd);
     }
-    public function postnft(Request $request){
+    public function postnft(Request $request)
+    {
 
         //store the nft in the database
-        
 
-        if(($request->hasFile('image'))){
+
+        if (($request->hasFile('image'))) {
 
 
             $file = $request->file('image');
 
             $destinationPath = 'nfts';
-            $file->move($destinationPath,$file->getClientOriginalName());
-            
+            $file->move($destinationPath, $file->getClientOriginalName());
 
-            $nft=new Nft();
 
-            $nft->name=$request->name;
+            $nft = new Nft();
 
-            $nft->price=$request->price;
+            $nft->name = $request->name;
 
-            $nft->owner=Auth::user()->id;
+            $nft->price = $request->price;
 
-            $nft->img=$file->getClientOriginalName();
+            $nft->owner = Auth::user()->id;
 
-            $nft->ref=$this->generateRandomString(6);
+            $nft->img = $file->getClientOriginalName();
 
-            if($nft->save()){
+            $nft->ref = $this->generateRandomString(6);
+
+            if ($nft->save()) {
 
                 return redirect('/home');
-                
-            }else{
+            } else {
                 return "exception happened";
             }
-
-
-
-
         }
 
         return view('create');
-
     }
 
-   
+
 
     public function addnft()
     {
@@ -220,9 +451,9 @@ class NftController extends Controller
 
         //get current auth user collections
 
-        $mycollections=Nft::where('owner',Auth::user()->id)
-        ->where('status',0)
-        ->get();
+        $mycollections = Nft::where('owner', Auth::user()->id)
+            ->where('status', 0)
+            ->get();
 
         return view('mycollection')->with(compact('mycollections'));
         //
@@ -236,7 +467,7 @@ class NftController extends Controller
     public function create(Request $request)
     {
         //
-        $code=$request->code;
+        $code = $request->code;
 
         return view('nftview');
     }

@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.0",
         "mckenziearts/laravel-notify": "^2.3",
+        "opcodesio/log-viewer": "^1.7",
         "predis/predis": "^2.0"
     },
     "require-dev": {

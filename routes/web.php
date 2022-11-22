@@ -21,7 +21,10 @@ Route::get('/', function () {
 Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
 
-Route::get('tier', [App\Http\Controllers\NftController::class, 'addpricevalue']);
+Route::get('tier1', [App\Http\Controllers\NftController::class, 'addpricevaluetier1']);
+Route::get('tier2', [App\Http\Controllers\NftController::class, 'addpricevaluetier2']);
+Route::get('tier3', [App\Http\Controllers\NftController::class, 'addpricevaluetier3']);
+
 
 Route::get('/ts', function () {
 
@@ -46,5 +49,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/buynft/{ref}', [App\Http\Controllers\MarketplaceController::class, 'buynft'])->name('buynft');
 
     Route::post('/postbuynft/{ref}', [App\Http\Controllers\MarketplaceController::class, 'purchase'])->name('postbuynft');
-
 });
