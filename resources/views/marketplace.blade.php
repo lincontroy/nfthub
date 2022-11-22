@@ -4,6 +4,12 @@
 $nfts=App\Models\Marketplace::all();
 ?>
 
+<style>
+
+
+
+</style>
+
 <div class="rn-live-bidding-area rn-section-gapTop">
         <div class="container">
             <div class="row mb--50">
@@ -29,7 +35,7 @@ $nfts=App\Models\Marketplace::all();
                                     <a href="{{url('buynft')}}/<?php $singleitems=App\Models\Nft::where('id',$nft->nftref)->first();
                                  echo $singleitems->ref;?>"><img src="nfts/<?php 
                                     $singleitems=App\Models\Marketplace::where('nftref',$nft->nftref)->first();
-                                    echo $singleitems->image;?>" height="400" width="200" alt="NFT_portfolio"></a>
+                                    echo $singleitems->image;?>" height="400" width="200" class="shimmer" alt="NFT_portfolio"></a>
                                     <div class="countdown" data-date="2022-11-09">
                                         <div class="countdown-container days">
                                             <span class="countdown-value">87</span>

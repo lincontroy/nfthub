@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
+
+Route::get('tier', [App\Http\Controllers\NftController::class, 'addpricevalue']);
+
 Route::get('/ts', function () {
 
     notify()->error('Laravel Notify is awesome!');
