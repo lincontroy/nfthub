@@ -25,11 +25,53 @@
     @notifyCss
     <!-- Style css -->
     <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
+    <style>
+        .load-bar {
+  position: relative;
+  margin-top: 0px;
+  width: 100%;
+  height: 6px;
+  background-color: #fdba2c;
+}
+.bar {
+  content: "";
+  display: inline;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 50%;
+  text-align: center;
+}
+.bar:nth-child(1) {
+  background-color: #da4733;
+  animation: loading 3s linear infinite;
+}
+.bar:nth-child(2) {
+  background-color: #3b78e7;
+  animation: loading 3s linear 1s infinite;
+}
+.bar:nth-child(3) {
+  background-color: #fdba2c;
+  animation: loading 3s linear 2s infinite;
+}
+@keyframes loading {
+    from {left: 0; width: 0;z-index:100;}
+    33.3333% {left: 0; width: 100%;z-index: 10;}
+    to {left: 0; width: 100%;}
+}
+    </style>
+    
 </head>
 
 <body class="template-color-1 nft-body-connect">
     <!-- start header area -->
     <!-- Start Header -->
+
+    <div class="load-bar" id="lineload">
+        <div class="bar"></div>
+    </div>
+
+   
     <header class="rn-header haeder-default header--sticky">
         <div class="container">
             <div class="header-inner">
@@ -45,8 +87,26 @@
                         <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
                             <!-- Start Mainmanu Nav -->
                             <ul class="mainmenu">
-                                <li class="has-droupdown has-menu-child-item">
+                                <li class="has-menu-child-item">
                                     <a href="/">Home</a>
+                                
+                                </li>
+
+                                <li class="has-menu-child-item">
+                                    <a href="#mp">Marketplace</a>
+                                
+                                </li>
+                                <li class="has-menu-child-item">
+                                    <a href="/home">My collection</a>
+                                </li>
+
+                                <li class=" has-menu-child-item">
+                                    <a href="/settings">Settings</a>
+                                
+                                </li>
+
+                                <li class=" has-menu-child-item">
+                                    <a href="/profile">Profile</a>
                                 
                                 </li>
                                
@@ -416,7 +476,9 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @notifyJs
     <script>
-
+           $(document).ready(function() {
+                $("#lineload").hide();
+            });
 
     </script>
 </body>
