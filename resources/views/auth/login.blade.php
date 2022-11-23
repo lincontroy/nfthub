@@ -24,7 +24,7 @@
                                 </span>
                             @endif
                             <div class="mb-5">
-                                <label for="newPassword" name="password" class="form-label">Create Password</label>
+                                <label for="newPassword" name="password" class="form-label">Enter Password</label>
                                 <input type="password" id="newPassword" name="password">
                             </div>
                             @if ($errors->has('password'))
