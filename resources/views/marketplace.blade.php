@@ -443,10 +443,10 @@ $nfts = App\Models\Marketplace::all();
                                 </span></a>
                             <span class="latest-bid">Highest bid 1/20</span>
                             <div class="bid-react-area">
-                                <div class="last-bid">USD {{$nft->price}}</div>
+                                <div class="last-bid">USDT {{$nft->price}}</div>
                                 <div class="react-area">
                                     <img src="{{url('/public/nfts/usdt.png')}}" height="20" width="20">
-                                    <span class="number">322</span>
+                                   
                                 </div>
                             </div>
                         </div>
