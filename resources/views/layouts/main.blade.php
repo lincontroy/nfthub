@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{url('assets/css/plugins/feature.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/plugins/jquery-ui.min.css')}}">
     <link rel="stylesheet" href="{{url('assets/css/vendor/odometer.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css" integrity="sha512-giQeaPns4lQTBMRpOOHsYnGw1tGVzbAIHUyHRgn7+6FmiEgGGjaG0T2LZJmAPMzRCl+Cug0ItQ2xDZpTmEc+CQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @notifyCss
     <!-- Style css -->
     <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
@@ -319,11 +320,26 @@
 
                     </li>
 
+                    @if(Auth::check())
+
                     <li class=" has-menu-child-item">
                         <a href="{{url('logout')}}">Logout</a>
 
                     </li>
+                    @else
 
+                    <li class=" has-menu-child-item">
+                        <a href="{{url('register')}}">Register</a>
+
+                    </li>
+                    <li class=" has-menu-child-item">
+                        <a href="{{url('login')}}">Login</a>
+
+                    </li>
+
+
+
+                    @endif
 
 
                 </ul>

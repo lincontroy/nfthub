@@ -440,8 +440,8 @@ $nfts = App\Models\Marketplace::all();
                                     <?php
                                     $singleitems = App\Models\Nft::where('id', $nft->nftref)->first();
                                     echo $singleitems->name; ?>
-                                </span></a>
-                            <span class="latest-bid">Highest bid 1/20</span>
+                                </span> </a> <i class="fa-solid fa-circle-check"></i>
+                            <!-- <span class="latest-bid">Highest bid 1/20</span> -->
                             <div class="bid-react-area">
                                 <div class="last-bid">USDT {{$nft->price}}</div>
                                 <div class="react-area">
