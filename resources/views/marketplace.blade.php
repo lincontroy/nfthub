@@ -7,7 +7,7 @@ $nfts = App\Models\Marketplace::all();
 <style>
     @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
 
-  
+
 
     #u_0_v {
         width: auto;
@@ -386,7 +386,7 @@ $nfts = App\Models\Marketplace::all();
                         <div class="product-style-one">
                             <div class="card-thumbnail">
                                 <a href="{{url('buynft')}}/<?php $singleitems = App\Models\Nft::where('id', $nft->nftref)->first();
-                                                            echo $singleitems->ref; ?>"><img src="nfts/<?php
+                                                            echo $singleitems->ref; ?>"><img src="{{url('public/nfts')}}/<?php
                                                                                                         $singleitems = App\Models\Marketplace::where('nftref', $nft->nftref)->first();
                                                                                                         echo $singleitems->image; ?>" height="400" width="200" class="shimmer" alt="NFT_portfolio"></a>
                                 <div class="countdown" data-date="2022-11-09">
@@ -445,7 +445,7 @@ $nfts = App\Models\Marketplace::all();
                             <div class="bid-react-area">
                                 <div class="last-bid">USD {{$nft->price}}</div>
                                 <div class="react-area">
-                                <img src="{{url('/public/nfts/usdt.png')}}" height="20" width="20">
+                                    <img src="{{url('/public/nfts/usdt.png')}}" height="20" width="20">
                                     <span class="number">322</span>
                                 </div>
                             </div>
@@ -466,21 +466,20 @@ $nfts = App\Models\Marketplace::all();
 
 
 <div class="rn-live-bidding-area rn-section-gapTop" id="u_0_v">
- <div class="container">
-    <div class="lightui1">
-        <div class="lightui1-shimmer">
-            
-        </div>
-    </div>
+    <div class="container">
+        <div class="lightui1">
+            <div class="lightui1-shimmer">
 
- </div>
+            </div>
+        </div>
+
+    </div>
 
 </div>
 
 <script type="text/javascript">
-    window.onload = function(){
-      document.getElementById("u_0_v").style.display='none';
-      document.getElementById("mp").style.display='block';
+    window.onload = function() {
+        document.getElementById("u_0_v").style.display = 'none';
+        document.getElementById("mp").style.display = 'block';
     };
-
 </script>
