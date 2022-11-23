@@ -27,40 +27,58 @@
     <link rel="stylesheet" href="{{url('assets/css/style.css')}}">
     <style>
         .load-bar {
-  position: relative;
-  margin-top: 0px;
-  width: 100%;
-  height: 6px;
-  background-color: #fdba2c;
-}
-.bar {
-  content: "";
-  display: inline;
-  position: absolute;
-  width: 0;
-  height: 100%;
-  left: 50%;
-  text-align: center;
-}
-.bar:nth-child(1) {
-  background-color: #da4733;
-  animation: loading 3s linear infinite;
-}
-.bar:nth-child(2) {
-  background-color: #3b78e7;
-  animation: loading 3s linear 1s infinite;
-}
-.bar:nth-child(3) {
-  background-color: #fdba2c;
-  animation: loading 3s linear 2s infinite;
-}
-@keyframes loading {
-    from {left: 0; width: 0;z-index:100;}
-    33.3333% {left: 0; width: 100%;z-index: 10;}
-    to {left: 0; width: 100%;}
-}
+            position: relative;
+            margin-top: 0px;
+            width: 100%;
+            height: 6px;
+            background-color: #fdba2c;
+        }
+
+        .bar {
+            content: "";
+            display: inline;
+            position: absolute;
+            width: 0;
+            height: 100%;
+            left: 50%;
+            text-align: center;
+        }
+
+        .bar:nth-child(1) {
+            background-color: #da4733;
+            animation: loading 3s linear infinite;
+        }
+
+        .bar:nth-child(2) {
+            background-color: #3b78e7;
+            animation: loading 3s linear 1s infinite;
+        }
+
+        .bar:nth-child(3) {
+            background-color: #fdba2c;
+            animation: loading 3s linear 2s infinite;
+        }
+
+        @keyframes loading {
+            from {
+                left: 0;
+                width: 0;
+                z-index: 100;
+            }
+
+            33.3333% {
+                left: 0;
+                width: 100%;
+                z-index: 10;
+            }
+
+            to {
+                left: 0;
+                width: 100%;
+            }
+        }
     </style>
-    
+
 </head>
 
 <body class="template-color-1 nft-body-connect">
@@ -71,7 +89,7 @@
         <div class="bar"></div>
     </div>
 
-   
+
     <header class="rn-header haeder-default header--sticky">
         <div class="container">
             <div class="header-inner">
@@ -89,12 +107,12 @@
                             <ul class="mainmenu">
                                 <li class="has-menu-child-item">
                                     <a href="/">Home</a>
-                                
+
                                 </li>
 
                                 <li class="has-menu-child-item">
                                     <a href="#mp">Marketplace</a>
-                                
+
                                 </li>
                                 <li class="has-menu-child-item">
                                     <a href="/home">My collection</a>
@@ -102,14 +120,16 @@
 
                                 <li class=" has-menu-child-item">
                                     <a href="/settings">Settings</a>
-                                
+
                                 </li>
 
                                 <li class=" has-menu-child-item">
                                     <a href="/profile">Profile</a>
-                                
+
                                 </li>
-                               
+
+                              
+
                             </ul>
                             <!-- End Mainmanu Nav -->
                         </nav>
@@ -117,12 +137,7 @@
                 </div>
                 <div class="header-right">
                     <div class="setting-option d-none d-lg-block">
-                        <form class="search-form-wrapper" action="#">
-                            <input type="search" placeholder="Search Here" aria-label="Search">
-                            <div class="search-icon">
-                                <button><i class="feather-search"></i></button>
-                            </div>
-                        </form>
+
                     </div>
                     <div class="setting-option rn-icon-list d-block d-lg-none">
                         <div class="icon-box search-mobile-icon">
@@ -142,32 +157,32 @@
                             <a  class="btn btn-primary-alta btn-small" href="/home">Dashboard</a>
                         </div><br> -->
                         <div class="icon-box">
-                            <button  class="btn btn-primary-alta btn-small" onclick="copyURI(event)" title="click here to copy" href="{{url('register')}}/{{Auth::user()->referal_code}}">Referal code</button>
+                            <button class="btn btn-primary-alta btn-small" onclick="copyURI(event)" title="click here to copy" href="{{url('register')}}/{{Auth::user()->referal_code}}">Referal code</button>
                         </div>
-                        
+
                         <script>
-                        function copyURI(evt) {
-                            evt.preventDefault();
-                            navigator.clipboard.writeText(evt.target.getAttribute('href')).then(() => {
-                            /* clipboard successfully set */
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: 'Referal code copied',
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
-                            }, () => {
-                            /* clipboard write failed */
-                            Swal.fire({
-                                position: 'top-end',
-                                icon: 'error',
-                                title: 'Failed to copy',
-                                showConfirmButton: false,
-                                timer: 1500
-                            })
-                            });
-                        }
+                            function copyURI(evt) {
+                                evt.preventDefault();
+                                navigator.clipboard.writeText(evt.target.getAttribute('href')).then(() => {
+                                    /* clipboard successfully set */
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'Referal code copied',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                }, () => {
+                                    /* clipboard write failed */
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'error',
+                                        title: 'Failed to copy',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                });
+                            }
                         </script>
                     </div>
                     @else
@@ -178,9 +193,9 @@
                     </div>
                     @endif
 
-                    
 
-                  
+
+
 
                     <div class="header_admin" id="header_admin">
                         <div class="setting-option rn-icon-list user-account">
@@ -399,15 +414,15 @@
         </div>
     </div>
     <!-- ENd Header Area -->
-   
-    
+
+
     @yield('content')
     <!-- End Footer Area -->
     <!-- Start Footer Area -->
     <x:notify-messages />
 
-   
-</div>
+
+    </div>
     <div class="copy-right-one ptb--20 bg-color--1">
         <div class="container">
             <div class="row align-items-center">
@@ -476,11 +491,10 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @notifyJs
     <script>
-           $(document).ready(function() {
-                $("#lineload").hide();
-            });
-
+        $(document).ready(function() {
+            $("#lineload").hide();
+        });
     </script>
 </body>
-</html>
 
+</html>
