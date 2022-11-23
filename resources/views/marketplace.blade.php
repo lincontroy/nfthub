@@ -10,7 +10,7 @@ $nfts = App\Models\Marketplace::all();
 
 </style>
 
-<div class="rn-live-bidding-area rn-section-gapTop" id="#mp">
+<div class="rn-live-bidding-area rn-section-gapTop" id="mp">
     <div class="container">
         <div class="row mb--50">
             <div class="col-lg-12">
