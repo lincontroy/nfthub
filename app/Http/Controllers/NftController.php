@@ -410,7 +410,7 @@ class NftController extends Controller
 
             $file = $request->file('image');
 
-            $destinationPath = '/public/nfts';
+            $destinationPath = 'nfts';
             $file->move($destinationPath, $file->getClientOriginalName());
 
 
