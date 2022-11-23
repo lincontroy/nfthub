@@ -5,12 +5,365 @@ $nfts = App\Models\Marketplace::all();
 ?>
 
 <style>
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+
+  
+
+    #u_0_v {
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .lightui1 {
+        border: 1px solid;
+        border-color: #bdbdbd;
+        border-radius: 2px;
+        padding: 20px;
+        background: #212e48;
+    }
+
+    .lightui1-shimmer {
+        -webkit-animation-duration: 1s;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: placeHolderShimmer;
+        -webkit-animation-timing-function: linear;
+        background: #d8d8d8;
+        background-image: linear-gradient(to right, #d8d8d8 0%, #bdbdbd 20%, #d8d8d8 40%, #d8d8d8 100%);
+        background-repeat: no-repeat;
+        background-size: 800px 104px;
+        height: 200px;
+        position: relative
+    }
+
+    .lightui1-shimmer div {
+        background: #212e48;
+        height: 6px;
+        left: 0;
+        position: absolute;
+        right: 0
+    }
+
+
+    .lightui1b-shimmer {
+        -webkit-animation-duration: 1s;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: placeHolderShimmer;
+        -webkit-animation-timing-function: linear;
+        background: #f0f0f0;
+        background-image: linear-gradient(to right, #f0f0f0 0%, #d8d8d8 20%, #f0f0f0 40%, #f0f0f0 100%);
+        background-repeat: no-repeat;
+        background-size: 800px 104px;
+        height: 200px;
+        position: relative
+    }
+
+    .lightui1b-shimmer div {
+        background: #ffffff;
+        height: 6px;
+        left: 0;
+        position: absolute;
+        right: 0
+    }
+
+
+    .lightui2 {
+        border: 1px solid;
+        border-color: #bdbdbd;
+        border-radius: 2px;
+        padding: 20px;
+        background: #ffffff;
+    }
+
+    .lightui2-shimmer {
+        -webkit-animation-duration: 1s;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: placeHolderShimmer;
+        -webkit-animation-timing-function: linear;
+        background: #d8d8d8;
+        background-image: linear-gradient(to right, #d8d8d8 0%, #bdbdbd 20%, #d8d8d8 40%, #d8d8d8 100%);
+        background-repeat: no-repeat;
+        background-size: 800px 104px;
+        height: 200px;
+        position: relative
+    }
+
+    .lightui2-shimmer div {
+        background: #ffffff;
+        height: 6px;
+        left: 0;
+        position: absolute;
+        right: 0
+    }
+
+
+    .lightui2b-shimmer {
+        -webkit-animation-duration: 1s;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: placeHolderShimmer;
+        -webkit-animation-timing-function: linear;
+        background: #bdbdbd;
+        background-image: linear-gradient(to right, #bdbdbd 0%, #999999 20%, #bdbdbd 40%, #bdbdbd 100%);
+        background-repeat: no-repeat;
+        background-size: 800px 104px;
+        height: 104px;
+        position: relative
+    }
+
+    .lightui2b-shimmer div {
+        background: #ffffff;
+        height: 6px;
+        left: 0;
+        position: absolute;
+        right: 0
+    }
 
 
 
+    .darkui1 {
+        border: 1px solid;
+        border-color: #656871;
+        border-radius: 2px;
+        padding: 20px;
+        background: #414247;
+    }
+
+    .darkui1-shimmer {
+        -webkit-animation-duration: 1s;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: placeHolderShimmer;
+        -webkit-animation-timing-function: linear;
+        background: #656871;
+        background-image: linear-gradient(to right, #656871 0%, #888b94 20%, #656871 40%, #656871 100%);
+        background-repeat: no-repeat;
+        background-size: 800px 104px;
+        height: 104px;
+        position: relative
+    }
+
+    .darkui1-shimmer div {
+        background: #414247;
+        height: 6px;
+        left: 0;
+        position: absolute;
+        right: 0
+    }
+
+
+    .darkui2 {
+        border: 1px solid;
+        border-color: #656871;
+        border-radius: 2px;
+        padding: 20px;
+        background: #313236;
+    }
+
+    .darkui2-shimmer {
+        -webkit-animation-duration: 1s;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: placeHolderShimmer;
+        -webkit-animation-timing-function: linear;
+        background: #50535a;
+        background-image: linear-gradient(to right, #50535a 0%, #656871 20%, #50535a 40%, #50535a 100%);
+        background-repeat: no-repeat;
+        background-size: 800px 104px;
+        height: 104px;
+        position: relative
+    }
+
+    .darkui2-shimmer div {
+        background: #313236;
+        height: 6px;
+        left: 0;
+        position: absolute;
+        right: 0
+    }
+
+
+    .highcontrast1 {
+        border: 1px solid;
+        border-color: #5c5c5c;
+        border-radius: 2px;
+        padding: 20px;
+        background: #d8d8d8;
+    }
+
+    .highcontrast1-shimmer {
+        -webkit-animation-duration: 1s;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: placeHolderShimmer;
+        -webkit-animation-timing-function: linear;
+        background: #999999;
+        background-image: linear-gradient(to right, #999999 0%, #737373 20%, #999999 40%, #999999 100%);
+        background-repeat: no-repeat;
+        background-size: 800px 104px;
+        height: 104px;
+        position: relative
+    }
+
+    .highcontrast1-shimmer div {
+        background: #d8d8d8;
+        height: 6px;
+        left: 0;
+        position: absolute;
+        right: 0
+    }
+
+
+    .highcontrast2 {
+        border: 1px solid;
+        border-color: #5c5c5c;
+        border-radius: 2px;
+        padding: 20px;
+        background: #bdbdbd;
+    }
+
+    .highcontrast2-shimmer {
+        -webkit-animation-duration: 1s;
+        -webkit-animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-name: placeHolderShimmer;
+        -webkit-animation-timing-function: linear;
+        background: #737373;
+        background-image: linear-gradient(to right, #737373 0%, #454545 20%, #737373 40%, #737373 100%);
+        background-repeat: no-repeat;
+        background-size: 800px 104px;
+        height: 104px;
+        position: relative
+    }
+
+    .highcontrast2-shimmer div {
+        background: #bdbdbd;
+        height: 6px;
+        left: 0;
+        position: absolute;
+        right: 0
+    }
+
+
+
+    ._2iwo {
+        height: 200px;
+        padding: 12px
+    }
+
+    .__z8 {
+        height: 150px;
+        padding: 12px
+    }
+
+    div._2iwr {
+        height: 40px;
+        left: 40px;
+        right: auto;
+        top: 0;
+        width: 8px;
+    }
+
+    div._2iws {
+        height: 8px;
+        left: 48px;
+        top: 0
+    }
+
+    div._2iwt {
+        left: 136px;
+        top: 8px
+    }
+
+    div._2iwu {
+        height: 12px;
+        left: 48px;
+        top: 14px
+    }
+
+    div._2iwv {
+        left: 100px;
+        top: 26px
+    }
+
+    div._2iww {
+        height: 10px;
+        left: 48px;
+        top: 32px
+    }
+
+    div._2iwx {
+        height: 20px;
+        top: 40px
+    }
+
+    div._2iwy {
+        left: 410px;
+        top: 60px
+    }
+
+    div._2iwz {
+        height: 13px;
+        top: 66px
+    }
+
+    div._2iw- {
+        left: 440px;
+        top: 79px
+    }
+
+    div._2iw_ {
+        height: 13px;
+        top: 85px
+    }
+
+    div._2ix0 {
+        left: 178px;
+        top: 98px
+    }
+
+    @-webkit-keyframes placeHolderShimmer {
+        0% {
+            background-position: -468px 0
+        }
+
+        100% {
+            background-position: 468px 0
+        }
+    }
+
+    @-webkit-keyframes prideShimmer {
+        from {
+            background-position: top left
+        }
+
+        to {
+            background-position: top right
+        }
+    }
+
+    ._4-u5 {
+        background-color: #ffffff
+    }
+
+    ._4-u7 {
+        background-color: #ffffff
+    }
+
+    ._57d8 {
+        background-color: #ffffff
+    }
+
+    ._4-u8 {
+        background-color: #ffffff
+    }
 </style>
 
-<div class="rn-live-bidding-area rn-section-gapTop" id="mp">
+
+
+<div class="rn-live-bidding-area rn-section-gapTop" id="mp" style="display:none">
     <div class="container">
         <div class="row mb--50">
             <div class="col-lg-12">
@@ -34,8 +387,8 @@ $nfts = App\Models\Marketplace::all();
                             <div class="card-thumbnail">
                                 <a href="{{url('buynft')}}/<?php $singleitems = App\Models\Nft::where('id', $nft->nftref)->first();
                                                             echo $singleitems->ref; ?>"><img src="nfts/<?php
-                                                                            $singleitems = App\Models\Marketplace::where('nftref', $nft->nftref)->first();
-                                                                            echo $singleitems->image; ?>" height="400" width="200" class="shimmer" alt="NFT_portfolio"></a>
+                                                                                                        $singleitems = App\Models\Marketplace::where('nftref', $nft->nftref)->first();
+                                                                                                        echo $singleitems->image; ?>" height="400" width="200" class="shimmer" alt="NFT_portfolio"></a>
                                 <div class="countdown" data-date="2022-11-09">
                                     <div class="countdown-container days">
                                         <span class="countdown-value">87</span>
@@ -112,3 +465,35 @@ $nfts = App\Models\Marketplace::all();
         </div>
     </div>
 </div>
+
+
+<div class="rn-live-bidding-area rn-section-gapTop" id="u_0_v">
+ <div class="container">
+    <div class="lightui1">
+        <div class="lightui1-shimmer">
+            <div class="_2iwr"></div>
+            <div class="_2iws"></div>
+            <div class="_2iwt"></div>
+            <div class="_2iwu"></div>
+            <div class="_2iwv"></div>
+            <div class="_2iww"></div>
+            <div class="_2iwx"></div>
+            <div class="_2iwy"></div>
+            <div class="_2iwz"></div>
+            <div class="_2iw-"></div>
+            <div class="_2iw_"></div>
+            <div class="_2ix0"></div>
+        </div>
+    </div>
+
+ </div>
+
+</div>
+
+<script type="text/javascript">
+    window.onload = function(){
+      document.getElementById("u_0_v").style.display='none';
+      document.getElementById("mp").style.display='block';
+    };
+
+</script>
