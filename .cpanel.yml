@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/futurepl/nft.lifegeegs.com/
+    - /bin/cp -R * $DEPLOYPATH
