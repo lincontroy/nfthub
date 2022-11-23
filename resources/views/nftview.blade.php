@@ -47,7 +47,7 @@
 
                             
                                     <div class="rn-pd-thumbnail">
-                                        <img src="{{url('nfts')}}/{{$collection->img}}" alt="{{$collection->name}}">
+                                        <img src="{{url('public/nfts')}}/{{$collection->img}}" alt="{{$collection->name}}">
                                     </div>
                                 
                                
@@ -99,7 +99,7 @@
                                 <div class="top-seller-inner-one">
                                     <div class="top-seller-wrapper">
                                         <div class="thumbnail">
-                                            <a href="#"><img src="{{url('nfts')}}/{{$collection->img}}" alt="Nft_Profile"></a>
+                                            <a href="#"><img src="{{url('/public/nfts')}}/{{$collection->img}}" alt="Nft_Profile"></a>
                                         </div>
                                         <div class="top-seller-content">
                                             <a href="#">
