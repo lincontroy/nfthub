@@ -111,7 +111,7 @@
                                 </li>
 
                                 <li class="has-menu-child-item">
-                                    <a href="#mp">Marketplace</a>
+                                    <a href="{{url('/#mp')}}">Marketplace</a>
 
                                 </li>
                                 <li class="has-menu-child-item">
