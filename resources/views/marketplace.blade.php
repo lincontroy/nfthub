@@ -19,7 +19,7 @@ $nfts = App\Models\Marketplace::all();
         border-color: #bdbdbd;
         border-radius: 2px;
         padding: 20px;
-        background: #212e48;
+        background: #13131d;
     }
 
     .lightui1-shimmer {
@@ -37,7 +37,7 @@ $nfts = App\Models\Marketplace::all();
     }
 
     .lightui1-shimmer div {
-        background: #212e48;
+        background: #13131d;
         height: 6px;
         left: 0;
         position: absolute;
@@ -471,18 +471,18 @@ $nfts = App\Models\Marketplace::all();
  <div class="container">
     <div class="lightui1">
         <div class="lightui1-shimmer">
-            <div class="_2iwr"></div>
-            <div class="_2iws"></div>
-            <div class="_2iwt"></div>
-            <div class="_2iwu"></div>
-            <div class="_2iwv"></div>
-            <div class="_2iww"></div>
-            <div class="_2iwx"></div>
-            <div class="_2iwy"></div>
-            <div class="_2iwz"></div>
-            <div class="_2iw-"></div>
-            <div class="_2iw_"></div>
-            <div class="_2ix0"></div>
+            <!-- <div class="_2iwr"></div> -->
+            <!-- <div class="_2iws"></div> -->
+            <!-- <div class="_2iwt"></div>
+            <div class="_2iwu"></div> -->
+            <!-- <div class="_2iwv"></div> -->
+            <!-- <div class="_2iww"></div> -->
+            <!-- <div class="_2iwx"></div>
+            <div class="_2iwy"></div> -->
+            <!-- <div class="_2iwz"></div>
+            <div class="_2iw-"></div> -->
+            <!-- <div class="_2iw_"></div> -->
+            <!-- <div class="_2ix0"></div> -->
         </div>
     </div>
 

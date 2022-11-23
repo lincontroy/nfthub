@@ -15,7 +15,7 @@
         </div>
         <div class="row g-5">
 
-            @if(count($mycollections)>0)
+            @if($mycollections->count()>0)
 
             @foreach($mycollections as $mycollection)
             <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
