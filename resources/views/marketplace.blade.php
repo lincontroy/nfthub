@@ -439,8 +439,10 @@ $nfts = App\Models\Marketplace::all();
 
                                     <?php
                                     $singleitems = App\Models\Nft::where('id', $nft->nftref)->first();
-                                    echo $singleitems->name; ?>
-                                </span> </a> <i class="fa-solid fa-circle-check"></i>
+                                    echo $singleitems->name;?><img src="{{url('nfts/check.png')}}" height="10" width="10"> 
+                                </span> </a> 
+                                
+                               
                             <!-- <span class="latest-bid">Highest bid 1/20</span> -->
                             <div class="bid-react-area">
                                 <div class="last-bid">USDT {{$nft->price}}</div>

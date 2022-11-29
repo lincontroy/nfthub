@@ -39,14 +39,32 @@ Route::get('register/{ref}', [App\Http\Controllers\Auth\RegisterController::clas
 
 
 
+Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
+
+    Route::get('/createnft', [App\Http\Controllers\NftController::class, 'createnft'])->name('createnft');
+    Route::post('/nftpost', [App\Http\Controllers\NftController::class, 'postnft'])->name('postnft');
+    Route::get('/deposits',[App\Http\Controllers\DepositsController::class, 'confirm'])->name('confirm');
+    Route::get('/approve/deposit/{id}',[App\Http\Controllers\DepositsController::class, 'approve'])->name('approve');
+    Route::get('/reject/deposit/{id}',[App\Http\Controllers\DepositsController::class, 'reject'])->name('reject');
+
+});
+
+
 Route::middleware(['auth'])->group(function () {
     //
     Route::get('/home', [App\Http\Controllers\NftController::class, 'index'])->name('home');
     Route::get('/nft/{ref}', [App\Http\Controllers\NftController::class, 'create'])->name('home');
-    Route::get('/createnft', [App\Http\Controllers\NftController::class, 'createnft'])->name('createnft');
-    Route::post('/nftpost', [App\Http\Controllers\NftController::class, 'postnft'])->name('postnft');
+    
     Route::post('/startselling', [App\Http\Controllers\MarketplaceController::class, 'store'])->name('store');
     Route::get('/buynft/{ref}', [App\Http\Controllers\MarketplaceController::class, 'buynft'])->name('buynft');
-
     Route::post('/postbuynft/{ref}', [App\Http\Controllers\MarketplaceController::class, 'purchase'])->name('postbuynft');
+
+
+
+    //user deposit 
+    Route::get('/deposit', [App\Http\Controllers\DepositsController::class, 'index'])->name('deposit');
+
+    Route::post('/deposit/post', [App\Http\Controllers\DepositsController::class, 'store'])->name('store');
+
+    Route::get('/user/deposits', [App\Http\Controllers\DepositsController::class, 'show'])->name('show');
 });
