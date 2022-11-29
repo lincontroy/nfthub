@@ -140,9 +140,9 @@ class MarketplaceController extends Controller
             }else{
 
                 //tell the buyer he/she has no balance in wallet
-                notify()->error('You have insufficient balance!');
+                notify()->error('You have insufficient balance! Kindly top up');
 
-                 return redirect()->back();
+                 return redirect('deposit');
 
 
             }
