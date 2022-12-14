@@ -93,23 +93,7 @@
                 </div>
                 <!-- End single service -->
                 <!-- start single service -->
-                <!-- <div class="col-xxl-3 col-lg-4 col-md-6 col-sm-6 col-12">
-                    <div data-sal="slide-up" data-sal-delay="300" data-sal-duration="800" class="rn-service-one color-shape-6">
-                        <div class="inner">
-                            <div class="icon">
-                                <img src="assets/images/icons/shape-6.png" alt="Shape">
-                            </div>
-                            <div class="subtitle">Step-04</div>
-                            <div class="content">
-                                <h4 class="title"><a href="#">Sell Your NFT's</a></h4>
-                                <p class="description">I throw myself down among the tall grass by the stream as I
-                                    lie close to the earth NFT's.</p>
-                                <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <a class="over-link" href="#"></a>
-                    </div>
-                </div> -->
+               
                 <!-- End single service -->
             </div>
         </div>
@@ -119,228 +103,13 @@
   
     <!-- New items End -->
     <!-- top top-seller start -->
-    <div class="rn-top-top-seller-area nice-selector-transparent rn-section-gapTop">
-        <div class="container">
-            <div class="row  mb--30">
-                <div class="col-12 justify-sm-center d-flex">
-                    <h3 class="title" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">Top Seller in</h3>
-                    <select>
-                        <option data-display="1 day"> 1 day</option>
-                        <option value="1">7 Day's</option>
-                        <option value="2">15 Day's</option>
-                        <option value="4">30 Day's</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row justify-sm-center g-5 top-seller-list-wrapper">
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-12.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Brodband</h6>
-                                </a>
-                                <span class="count-number">
-                                $2500,000
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-2.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Ms. Parkline</h6>
-                                </a>
-                                <span class="count-number">
-                                $2300,000
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-3.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Methods</h6>
-                                </a>
-                                <span class="count-number">
-                                $2100,000
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-4.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Jone sone</h6>
-                                </a>
-                                <span class="count-number">
-                                $2000,000
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-5.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Siddhart</h6>
-                                </a>
-                                <span class="count-number">
-                                $200,000
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-6.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Sobuj Mk</h6>
-                                </a>
-                                <span class="count-number">
-                                $2000,000
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-7.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Trodband</h6>
-                                </a>
-                                <span class="count-number">
-                                $2500,000
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-8.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Yash</h6>
-                                </a>
-                                <span class="count-number">
-                                $2500,000
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail">
-                                <a href="author.html"><img src="assets/images/client/client-9.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">YASHKIB</h6>
-                                </a>
-                                <span class="count-number">
-                                $2500,000
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-
-                <!-- start single top-seller -->
-                <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-3 col-md-4 col-sm-6 top-seller-list">
-                    <div class="top-seller-inner-one">
-                        <div class="top-seller-wrapper">
-                            <div class="thumbnail varified">
-                                <a href="author.html"><img src="assets/images/client/client-10.png" alt="Nft_Profile"></a>
-                            </div>
-                            <div class="top-seller-content">
-                                <a href="author.html">
-                                    <h6 class="name">Brodband</h6>
-                                </a>
-                                <span class="count-number">
-                                $2500,000
-                            </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End single top-seller -->
-            </div>
-        </div>
-    </div>
+   
     <!-- top top-seller end -->
     <!-- Start product area -->
    
     <!-- end product area -->
     <!-- collection area Start -->
-    <div class="rn-collection-area rn-section-gapTop">
+    <div class="rn-collection-area rn-section-gapTop"> 
         <div class="container">
             <div class="row mb--50 align-items-center">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
@@ -356,7 +125,7 @@
             <div class="row g-5">
                 <!-- start single collention -->
                 <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" class="rn-collection-inner-one">
+                    <a href="" class="rn-collection-inner-one">
                         <div class="collection-wrapper">
                             <div class="collection-big-thumbnail">
                                 <img src="assets/images/collection/collection-lg-01.jpg" alt="Nft_Profile">
@@ -379,7 +148,7 @@
                 <!-- End single collention -->
                 <!-- start single collention -->
                 <div data-sal="slide-up" data-sal-delay="200" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" class="rn-collection-inner-one">
+                    <a href="" class="rn-collection-inner-one">
                         <div class="collection-wrapper">
                             <div class="collection-big-thumbnail">
                                 <img src="assets/images/collection/collection-lg-03.jpg" alt="Nft_Profile">
@@ -402,7 +171,7 @@
                 <!-- End single collention -->
                 <!-- start single collention -->
                 <div data-sal="slide-up" data-sal-delay="250" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" class="rn-collection-inner-one">
+                    <a href="" class="rn-collection-inner-one">
                         <div class="collection-wrapper">
                             <div class="collection-big-thumbnail">
                                 <img src="assets/images/collection/collection-lg-02.jpg" alt="Nft_Profile">
@@ -425,7 +194,7 @@
                 <!-- End single collention -->
                 <!-- start single collention -->
                 <div data-sal="slide-up" data-sal-delay="350" data-sal-duration="800" class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
-                    <a href="product-details.html" class="rn-collection-inner-one">
+                    <a href="" class="rn-collection-inner-one">
                         <div class="collection-wrapper">
                             <div class="collection-big-thumbnail">
                                 <img src="assets/images/collection/collection-lg-04.jpg" alt="Nft_Profile">
@@ -448,7 +217,7 @@
                 <!-- End single collention -->
             </div>
         </div>
-    </div>
+    </div> 
     <!-- collection area End -->
     <!-- Modal -->
     <div class="rn-popup-modal share-modal-wrapper modal fade" id="shareModal" tabindex="-1" aria-hidden="true">
@@ -505,11 +274,11 @@
                                 <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
                             </div>
                             <p class="rn-footer-describe">
-                                Created with the collaboration of over 60 of the world's best Nuron Artists.
+                                Created with the collaboration of over 60 of the world's best {{env('APP_NAME')}} Artists.
                             </p>
                         </div>
                         <div class="widget-bottom mt--40 pt--40">
-                            <h6 class="title">Get The Latest Nuron Updates </h6>
+                            <h6 class="title">Get The Latest {{env('APP_NAME')}} Updates </h6>
                             <div class="input-group">
                                 <input type="text" class="form-control bg-color--2" placeholder="Your username" aria-label="Recipient's username">
                                 <div class="input-group-append">
@@ -525,7 +294,7 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_mobile--40">
                     <div class="footer-widget widget-quicklink">
-                        <h6 class="widget-title">Nuron</h6>
+                        <h6 class="widget-title">{{env('APP_NAME')}}</h6>
                         <ul class="footer-list-one">
                             <li class="single-list"><a href="#">Protocol Explore</a></li>
                             <li class="single-list"><a href="#">System Token</a></li>
@@ -559,36 +328,36 @@
                         <ul class="footer-recent-post">
                             <li class="recent-post">
                                 <div class="thumbnail">
-                                    <a href="product-details.html">
+                                    <a href="">
                                         <img src="assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
-                                    <h6 class="title"><a href="product-details.html">#21 The Wonder</a></h6>
+                                    <h6 class="title"><a href="">#21 The Wonder</a></h6>
                                     <p>Highest bid 1/20</p>
                                     <span class="price">0.244wETH</span>
                                 </div>
                             </li>
                             <li class="recent-post">
                                 <div class="thumbnail">
-                                    <a href="product-details.html">
+                                    <a href="">
                                         <img src="assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
-                                    <h6 class="title"><a href="product-details.html">Diamond Dog</a></h6>
+                                    <h6 class="title"><a href="">Diamond Dog</a></h6>
                                     <p>Highest bid 1/20</p>
                                     <span class="price">0.022wETH</span>
                                 </div>
                             </li>
                             <li class="recent-post">
                                 <div class="thumbnail">
-                                    <a href="product-details.html">
+                                    <a href="">
                                         <img src="assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
-                                    <h6 class="title"><a href="product-details.html">Morgan11</a></h6>
+                                    <h6 class="title"><a href="">Morgan11</a></h6>
                                     <p>Highest bid 1/20</p>
                                     <span class="price">0.892wETH</span>
                                 </div>

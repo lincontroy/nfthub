@@ -43,9 +43,14 @@ Route::group(['prefix'=>'admin','middleware'=>['auth']], function(){
 
     Route::get('/createnft', [App\Http\Controllers\NftController::class, 'createnft'])->name('createnft');
     Route::post('/nftpost', [App\Http\Controllers\NftController::class, 'postnft'])->name('postnft');
+    //deposits
     Route::get('/deposits',[App\Http\Controllers\DepositsController::class, 'confirm'])->name('confirm');
     Route::get('/approve/deposit/{id}',[App\Http\Controllers\DepositsController::class, 'approve'])->name('approve');
     Route::get('/reject/deposit/{id}',[App\Http\Controllers\DepositsController::class, 'reject'])->name('reject');
+    //withdrawals
+    Route::get('/withdrawals',[App\Http\Controllers\WithdrawalsController::class, 'confirm'])->name('confirm');
+    Route::get('/approve/withdrawal/{id}',[App\Http\Controllers\WithdrawalsController::class, 'approve'])->name('approve');
+    Route::get('/reject/withdrawal/{id}',[App\Http\Controllers\WithdrawalsController::class, 'reject'])->name('reject');
 
 });
 
@@ -67,4 +72,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/deposit/post', [App\Http\Controllers\DepositsController::class, 'store'])->name('store');
 
     Route::get('/user/deposits', [App\Http\Controllers\DepositsController::class, 'show'])->name('show');
+
+    //user withdrawals
+
+    Route::get('/withdraw', [App\Http\Controllers\WithdrawalsController::class, 'index'])->name('withdraw');
+    Route::post('withdraw/post', [App\Http\Controllers\WithdrawalsController::class, 'store'])->name('store');
+    Route::get('user/withdrawals', [App\Http\Controllers\WithdrawalsController::class, 'show'])->name('show');
+
+
+
 });
