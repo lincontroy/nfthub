@@ -303,6 +303,10 @@
                     </li>
 
                     <li class="has-menu-child-item">
+                        <a href="{{url('withdraw')}}">Withdraw</a>
+                    </li>
+
+                    <li class="has-menu-child-item">
                         <a href="{{url('home')}}">My collection</a>
                     </li>
                     <li class="has-menu-child-item">
