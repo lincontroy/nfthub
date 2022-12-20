@@ -21,100 +21,96 @@ class DepositsController extends Controller
         return view('deposits');
     }
 
-    public function approve(Request $request){
-            //get the deposit id
+    public function approve(Request $request)
+    {
+        //get the deposit id
 
-            $deposit=Deposits::where('id',$request->id)->first();
+        $deposit = Deposits::where('id', $request->id)->first();
 
-            $user_id=$deposit->user_id;
+        $user_id = $deposit->user_id;
 
-            $user=User::where('id',$user_id)->first();
-
-
-
-            $user_balance=$user->wallet;
-
-            
-
-            $new_user_balance=$user_balance+$deposit->amount;
-
-           
-
-            //update the user
-
-            $wallet_update=User::where('id',$user_id)->update(['wallet'=>$new_user_balance]);
-
-            //update the deposit to status 1
-
-            $deposit_update=Deposits::where('id',$request->id)->update(['status'=>1]);
-            
-            if($wallet_update && $deposit_update){
-
-                notify()->success('Deposit updated !');
+        $user = User::where('id', $user_id)->first();
 
 
-                return redirect()->back();
 
-            }else{
-
-                notify()->error('Deposit error');
+        $user_balance = $user->wallet;
 
 
-                return redirect()->back();
 
-            }
+        $new_user_balance = $user_balance + $deposit->amount;
 
 
+
+        //update the user
+
+        $wallet_update = User::where('id', $user_id)->update(['wallet' => $new_user_balance]);
+
+        //update the deposit to status 1
+
+        $deposit_update = Deposits::where('id', $request->id)->update(['status' => 1]);
+
+        if ($wallet_update && $deposit_update) {
+
+            notify()->success('Deposit updated !');
+
+
+            return redirect()->back();
+        } else {
+
+            notify()->error('Deposit error');
+
+
+            return redirect()->back();
+        }
     }
 
-    public function reject(Request $request){
+    public function reject(Request $request)
+    {
 
-            $deposit=Deposits::where('id',$request->id)->first();
+        $deposit = Deposits::where('id', $request->id)->first();
 
-            $user_id=$deposit->user_id;
+        $user_id = $deposit->user_id;
 
-            $user=User::where('id',$user_id)->first();
-
-
-
-            $user_balance=$user->wallet;
-
-            
-
-            $new_user_balance=$user_balance+$deposit->amount;
-
-           
-
-            //update the user
-
-            // $wallet_update=User::where('id',$user_id)->update(['wallet'=>$new_user_balance]);
-
-            //update the deposit to status 1
-
-            $deposit_update=Deposits::where('id',$request->id)->update(['status'=>2]);
-            
-            if($deposit_update){
-
-                notify()->success('Deposit rejected !');
+        $user = User::where('id', $user_id)->first();
 
 
-                return redirect()->back();
 
-            }else{
-
-                notify()->error('Deposit error');
+        $user_balance = $user->wallet;
 
 
-                return redirect()->back();
 
-            }
-        
+        $new_user_balance = $user_balance + $deposit->amount;
+
+
+
+        //update the user
+
+        // $wallet_update=User::where('id',$user_id)->update(['wallet'=>$new_user_balance]);
+
+        //update the deposit to status 1
+
+        $deposit_update = Deposits::where('id', $request->id)->update(['status' => 2]);
+
+        if ($deposit_update) {
+
+            notify()->success('Deposit rejected !');
+
+
+            return redirect()->back();
+        } else {
+
+            notify()->error('Deposit error');
+
+
+            return redirect()->back();
+        }
     }
 
-    public function confirm(){
-        $deposits=Deposits::where('status','>=',0)
-        ->orderBy('id','DESC')
-        ->get();
+    public function confirm()
+    {
+        $deposits = Deposits::where('status', '>=', 0)
+            ->orderBy('id', 'DESC')
+            ->get();
 
         return view('userdeposits')->with(compact('deposits'));
     }
@@ -138,41 +134,55 @@ class DepositsController extends Controller
     public function store(Request $request)
     {
         //
-        
+
 
 
         $fields = $request->validate([
             'amount' => 'required',
+            'hash' => 'required',
 
         ]);
 
-       
+
         $user = Auth::user()->id;
 
         $amount = $request->amount;
 
-        $create = Deposits::create(
-            [
-                'user_id' => $user,
-                'amount' => $amount,
-                'status' => 0
+        $hash = $request->hash;
 
-            ]
-        );
+        //check if hash has already been used before
 
-        if ($create) {
+        $check_if_hash_exists = Deposits::where('hash', $hash)->count();
 
-            notify()->success('Deposit request created !');
+        if (($check_if_hash_exists) <= 0) {
+            $create = Deposits::create(
+                [
+                    'user_id' => $user,
+                    'amount' => $amount,
+                    'hash' => $hash,
+                    'status' => 0
+
+                ]
+            );
+
+            if ($create) {
+
+                notify()->success('Deposit request created !');
+
+
+                return redirect('user/deposits');
+            } else {
+
+                notify()->success('An error occured!');
+
+
+                return redirect()->back();
+            }
+        } else {
+            notify()->error('The hash already exists in our records!');
 
 
             return redirect('user/deposits');
-
-        } else {
-
-            notify()->success('An error occured!');
-
-
-            return redirect()->back();
         }
     }
 
@@ -186,9 +196,9 @@ class DepositsController extends Controller
     {
         //
 
-        $deposits=Deposits::where('user_id',Auth::user()->id)
-        ->orderBy('id','DESC')
-        ->get();
+        $deposits = Deposits::where('user_id', Auth::user()->id)
+            ->orderBy('id', 'DESC')
+            ->get();
 
         return view('mydeposits')->with(compact('deposits'));
     }

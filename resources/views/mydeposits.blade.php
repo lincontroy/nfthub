@@ -30,11 +30,12 @@
                                         <span>Status</span>
                                     </th>
                                     <th>
-                                        <span>Created At</span>
+                                        <span>Hash</span>
                                     </th>
                                     <th>
-                                        <span>Updated At</span>
+                                        <span>Created at</span>
                                     </th>
+                                   
                                     
                                 </tr>
                             </thead>
@@ -57,8 +58,9 @@
                                     @else
                                     <td><span class="color-danger">Canceled</span></td>
                                     @endif
+                                    <td><span>{{$deposit->hash}}</span></td>
                                     <td><span>{{$deposit->created_at}}</span></td>
-                                    <td><span>{{$deposit->updated_at}}</span></td>
+                                    
                                 </tr>
                             
                               @endforeach  

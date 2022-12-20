@@ -33,11 +33,9 @@
                                         <span>Status</span>
                                     </th>
                                     <th>
-                                        <span>Created At</span>
+                                        <span>Hash</span>
                                     </th>
-                                    <th>
-                                        <span>Updated At</span>
-                                    </th>
+                                    
 
                                     <th>
                                         <span>Action</span>
@@ -73,8 +71,8 @@
                                     @else
                                     <td><span class="color-danger">Canceled</span></td>
                                     @endif
-                                    <td><span>{{$deposit->created_at}}</span></td>
-                                    <td><span>{{$deposit->updated_at}}</span></td>
+                                    <td><span>{{$deposit->hash}}</span></td>
+                                    
 
                                     <td>
                                     @if(($deposit->status)==0)
