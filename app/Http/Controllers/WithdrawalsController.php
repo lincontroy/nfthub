@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Deposits;
 use Auth;
 use App\Models\Withdrawals;
 use Illuminate\Http\Request;
@@ -34,12 +35,11 @@ class WithdrawalsController extends Controller
                 notify()->success('Approved');
 
                 return redirect()->back();
-            }else{
+            } else {
 
                 notify()->error('Not approved');
 
                 return redirect()->back();
-
             }
         } else {
             //request was already approved
@@ -70,12 +70,11 @@ class WithdrawalsController extends Controller
                 notify()->success('Rejected');
 
                 return redirect()->back();
-            }else{
+            } else {
 
                 notify()->error('Not rejected');
 
                 return redirect()->back();
-
             }
         } else {
             //request was already approved
@@ -144,30 +143,52 @@ class WithdrawalsController extends Controller
 
             //user has enough balance to withdraw hence process the withdrawal
             $new_balance = $user_balance - $request->amount;
+            //check the last deposit by this user
+
+            $deposits_checker = Deposits::where('user_id', Auth::user()->id)
+                ->OrderBy('created_at', 'desc')
+                ->first();
 
 
 
-            $withdrawals = new Withdrawals();
+            if ($deposits_checker) {
 
-            $withdrawals->user_id = $user->id;
-            $withdrawals->wallet_address = $request->wallet;
-            $withdrawals->amount = $request->amount;
-            $withdrawals->status = 0;
+                $diff = now()->diffInDays($deposits_checker->created_at);
 
-            $update = Auth::user()->update(['wallet' => $new_balance]);
+                if ($diff >= 10) {
 
-            if ($withdrawals->save() && $update) {
+                    $withdrawals = new Withdrawals();
 
+                    $withdrawals->user_id = $user->id;
+                    $withdrawals->wallet_address = $request->wallet;
+                    $withdrawals->amount = $request->amount;
+                    $withdrawals->status = 0;
 
+                    $update = Auth::user()->update(['wallet' => $new_balance]);
 
-                notify()->success('Withdrawal was successful ! Await confirmation');
+                    if ($withdrawals->save() && $update) {
+
+                        notify()->success('Withdrawal was successful ! Await confirmation');
+
+                        return redirect('user/withdrawals');
+                    } else {
+
+                        notify()->error('An error has occured');
+
+                        return redirect()->back();
+                    }
+                } else {
+
+                    $actual_difference=10-$diff;
+                    $message="Hello there, Kindly wait for $actual_difference days before trying a withdrawal";
+                    notify()->error($message);
+
+                    return redirect()->back();
+                }
+            } else {
+                notify()->error('You need to make atleast one deposit!');
 
                 return redirect('user/withdrawals');
-            } else {
-
-                notify()->error('An error has occured');
-
-                return redirect()->back();
             }
         }
     }
