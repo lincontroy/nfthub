@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Mail;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Mail\WelcomeMail;
 
 class RegisterController extends Controller
 {
@@ -75,6 +77,14 @@ class RegisterController extends Controller
     {
 
         $code=$data['ref'];
+        $email=$data['email'];
+        try{
+
+            Mail::to($email)->send(new WelcomeMail($data));
+    
+            }catch(Exception $e){
+                
+            }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -82,6 +92,12 @@ class RegisterController extends Controller
             'ref'=>$code,
             'referal_code'=>$this->uniqueid(10)
         ]);
+
+        
+
+        //if the storage is successfull then we can try to send the mail to the user
+
+        
     }
 
     public function crypto_rand_secure($min, $max)
