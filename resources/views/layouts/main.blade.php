@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Home || {{env('App_name')}} - NFT Marketplace</title>
+    <title>Home || {{env('APP_NAME')}} - NFT Marketplace</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -96,10 +96,10 @@
             <div class="header-inner">
                 <div class="header-left">
                     <div class="logo-thumbnail logo-custom-css">
-                        <h5 class="logo-light">
+                        <h6 class="logo-light">
                             <!-- <img src="assets/images/logo/logo-white.png" alt="nft-logo"> -->
-                            {{env('App_name')}}
-                        </h5>
+                            <!-- {{env('APP_NAME')}} -->
+                        </h6>
                         <!-- <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a> -->
                     </div>
                     <div class="mainmenu-wrapper">
@@ -280,8 +280,8 @@
         <div class="inner">
             <div class="header-top">
                 <div class="logo logo-custom-css">
-                    <a class="logo-light" href="index.html">{{env('APP_NAME')}}</a>
-                    <a class="logo-dark" href="index.html">{{env('APP_NAME')}}</a>
+                    <a class="logo-light" href="">{{env('APP_NAME')}}</a>
+                    <a class="logo-dark" href="">{{env('APP_NAME')}}</a>
                 </div>
                 <div class="close-menu">
                     <button class="close-button">
@@ -366,7 +366,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="copyright-left">
-                        <span>©2022 {{env('APP_NAME')}}, Inc. All rights reserved.</span>
+                        <span>2019-<script>document.write(/\d{4}/.exec(Date())[0])</script> {{env('APP_NAME')}}, Inc. All rights reserved.</span>
                         <ul class="privacy">
                             <li><a href="terms-condition.html">Terms</a></li>
                             <li><a href="privacy-policy.html">Privacy Policy</a></li>
