@@ -46,7 +46,7 @@
                             <div class="subtitle">Step-01</div>
                             <div class="content">
                                 <h4 class="title"><a href="#">Create an Account</a></h4>
-                                <p class="description">Create your free {{env('APP_NAME')}} and obtain a wallet address for all Your
+                                <p class="description">Create your free {{env('APP_NAME')}} account and obtain a wallet address for all Your
                                     transactions
                                 </p>
                                 <a class="read-more-button" href="#"><i class="feather-arrow-right"></i></a>
