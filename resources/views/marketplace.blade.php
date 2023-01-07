@@ -386,7 +386,7 @@ $nfts = App\Models\Marketplace::all();
                         <div class="product-style-one">
                             <div class="card-thumbnail">
                                 <a href="{{url('buynft')}}/<?php $singleitems = App\Models\Nft::where('id', $nft->nftref)->first();
-                                                            echo $singleitems->ref; ?>"><img src="{{url('public/nfts')}}/<?php
+                                                            echo $singleitems->ref; ?>"><img src="{{url('storage/nfts')}}/<?php
                                                                                                         $singleitems = App\Models\Marketplace::where('nftref', $nft->nftref)->first();
                                                                                                         echo $singleitems->image; ?>" height="400" width="200" class="shimmer" alt="NFT_portfolio"></a>
                                 <div class="countdown" data-date="2022-11-09">
@@ -439,7 +439,7 @@ $nfts = App\Models\Marketplace::all();
 
                                     <?php
                                     $singleitems = App\Models\Nft::where('id', $nft->nftref)->first();
-                                    echo $singleitems->name;?><img src="{{url('nfts/check.png')}}" height="10" width="10"> 
+                                    echo $singleitems->name;?><img src="{{url('storage/nfts/check.png')}}" height="10" width="10"> 
                                 </span> </a> 
                                 
                                
@@ -447,7 +447,7 @@ $nfts = App\Models\Marketplace::all();
                             <div class="bid-react-area">
                                 <div class="last-bid">USDT {{$nft->price}}</div>
                                 <div class="react-area">
-                                    <img src="{{url('/public/nfts/usdt.png')}}" height="20" width="20">
+                                    <img src="{{url('/storage/nfts/usdt.png')}}" height="20" width="20">
                                    
                                 </div>
                             </div>

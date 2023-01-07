@@ -51,7 +51,7 @@
 
 
                          <div class="rn-pd-thumbnail">
-                             <img src="{{url('nfts')}}/{{$collection->img}}" alt="{{$collection->name}}">
+                             <img src="{{url('public/nfts')}}/{{$collection->img}}" alt="{{$collection->name}}">
                          </div>
 
 

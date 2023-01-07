@@ -6,6 +6,7 @@ use App\Models\Nft;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
+use Exception;
 
 class NftController extends Controller
 {
@@ -410,8 +411,8 @@ class NftController extends Controller
 
             $file = $request->file('image');
 
-            $destinationPath = 'nfts';
-            $file->move($destinationPath, $file->getClientOriginalName());
+            $destinationPath = 'storage/nfts';
+            
 
 
             $nft = new Nft();
@@ -426,15 +427,18 @@ class NftController extends Controller
 
             $nft->ref = $this->generateRandomString(6);
 
-            if ($nft->save()) {
+            if ($nft->save() && $file->move($destinationPath, $file->getClientOriginalName())
+            ) {
 
-                return redirect('/home');
+                return view('create');
+
+               
             } else {
                 return "exception happened";
             }
         }
 
-        return view('create');
+        
     }
 
 

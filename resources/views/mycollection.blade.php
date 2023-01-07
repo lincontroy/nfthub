@@ -25,7 +25,7 @@
             <div data-sal="slide-up" data-sal-delay="150" data-sal-duration="800" class="col-5 col-lg-4 col-md-6 col-sm-6 col-12">
                 <div class="product-style-one no-overlay">
                     <div class="card-thumbnail">
-                        <a href="{{url('nft')}}/{{$mycollection->ref}}"><img src="{{url('nfts')}}/{{$mycollection->img}}" alt="NFT_portfolio"></a>
+                        <a href="{{url('nft')}}/{{$mycollection->ref}}"><img src="{{url('storage/nfts')}}/{{$mycollection->img}}" alt="NFT_portfolio"></a>
                     </div>
                     <div class="product-share-wrapper">
                         <div class="profile-share">
