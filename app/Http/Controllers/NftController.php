@@ -411,7 +411,7 @@ class NftController extends Controller
 
             $file = $request->file('image');
 
-            $destinationPath = 'storage/nfts';
+            $destinationPath = 'public/storage/nfts';
             
 
 
