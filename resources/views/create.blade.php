@@ -10,7 +10,7 @@
 
                 <div class="col-lg-7">
                     <div class="form-wrapper-one">
-                        <form class="row" action="{{url('nftpost')}}" method="post" enctype='multipart/form-data'>
+                        <form class="row" action="{{url('admin/nftpost')}}" method="post" enctype='multipart/form-data'>
                             @csrf
                             <div class="col-md-12">
                                 <div class="input-box pb--20">
