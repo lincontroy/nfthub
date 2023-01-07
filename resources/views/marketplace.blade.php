@@ -386,7 +386,7 @@ $nfts = App\Models\Marketplace::all();
                         <div class="product-style-one">
                             <div class="card-thumbnail">
                                 <a href="{{url('buynft')}}/<?php $singleitems = App\Models\Nft::where('id', $nft->nftref)->first();
-                                                            echo $singleitems->ref; ?>"><img src="{{url('storage/nfts')}}/<?php
+                                                            echo $singleitems->ref; ?>"><img src="{{url('public/storage/nfts')}}/<?php
                                                                                                         $singleitems = App\Models\Marketplace::where('nftref', $nft->nftref)->first();
                                                                                                         echo $singleitems->image; ?>" height="400" width="200" class="shimmer" alt="NFT_portfolio"></a>
                                 <div class="countdown" data-date="2022-11-09">
