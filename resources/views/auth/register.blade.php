@@ -36,7 +36,7 @@
                             </div>
                             <div class="mb-5">
                                 <label for="exampleInputEmail1" class="form-label">Referal code</label>
-                                <input type="text" style="color:white" id="exampleInputEmail1" name="ref" value="{{request()->ref}}" class="form-control @error('email') is-invalid @enderror">
+                                <input type="text" style="color:white" id="exampleInputEmail1" name="ref" value="{{request()->ref}}" class="form-control @error('ref') is-invalid @enderror">
                                 @error('ref')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
