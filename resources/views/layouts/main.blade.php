@@ -85,6 +85,7 @@
 </head>
 
 <body class="template-color-1 nft-body-connect">
+<x:notify-messages />
     <!-- start header area -->
     <!-- Start Header -->
 
@@ -375,7 +376,7 @@
     @yield('content')
     <!-- End Footer Area -->
     <!-- Start Footer Area -->
-    <x:notify-messages />
+    
 
 
     </div>
@@ -389,8 +390,8 @@
 
                             </script> {{ env('APP_NAME') }}, Inc. All rights reserved.</span>
                         <ul class="privacy">
-                            <li><a href="terms-condition.html">Terms</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="">Terms</a></li>
+                            <li><a href="">Privacy Policy</a></li>
                         </ul>
                     </div>
                 </div>

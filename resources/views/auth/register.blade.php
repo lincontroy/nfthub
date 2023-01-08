@@ -54,14 +54,18 @@
                             </div>
                             <div class="mb-5">
                                 <label for="exampleInputPassword1" class="form-label">Renter Password</label>
-                                <input type="password" style="color:white" id="exampleInputPassword1" name="password_confirmation">
+                                <input type="password" style="color:white" class="form-control @error('password') is-invalid @enderror" id="exampleInputPassword1" name="password_confirmation">
                             </div>
                             <div class="mb-5 rn-check-box">
-                                <input type="checkbox" style="color:white" class="rn-check-box-input" id="exampleCheck1">
-                                <label class="rn-check-box-label" for="exampleCheck1">Allow to all terms &
-                                    condition</label>
+                                 <input type='checkbox' name='thing' value='valuable' id="thing"/>
+                                 <label class="rn-check-box-label" for="thing">Accept terms &
+                                    conditions</label>
+                                
+
+                                <!-- <input type="checkbox"  id="check" onchange="document.getElementById('btncheck').disabled = this.checked;"> -->
+                               
                             </div>
-                            <button type="submit" class="btn btn-primary mr--15">Sign Up</button>
+                            <button type="submit" id="btncheck" class="btn btn-primary mr--15" disabled>Sign Up</button>
                             <a href="/login" class="btn btn-primary-alta">Log In</a>
                         </form>
                     </div>
@@ -70,8 +74,16 @@
             </div>
         </div>
     </div>
-
+               
     <br><br>
+
+    <script>
+        var checker = document.getElementById('thing');
+        var sendbtn = document.getElementById('btncheck');
+        checker.onchange = function() {
+        sendbtn.disabled = !this.checked;
+        };
+    </script>
 
     @endsection
     

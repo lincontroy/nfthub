@@ -269,10 +269,10 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <div class="widget-content-wrapper">
                         <div class="footer-left">
-                            <div class="logo-thumbnail logo-custom-css">
+                            <!-- <div class="logo-thumbnail logo-custom-css">
                                 <a class="logo-light" href="index.html"><img src="assets/images/logo/logo-white.png" alt="nft-logo"></a>
                                 <a class="logo-dark" href="index.html"><img src="assets/images/logo/logo-dark.png" alt="nft-logo"></a>
-                            </div>
+                            </div> -->
                             <p class="rn-footer-describe">
                                 Created with the collaboration of over 60 of the world's best {{env('APP_NAME')}} Artists.
                             </p>
@@ -324,12 +324,12 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--40 mt_sm--40">
                     <div class="footer-widget">
-                        <h6 class="widget-title">Recent Sold Out</h6>
+                        <h6 class="widget-title">Top sellers</h6>
                         <ul class="footer-recent-post">
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="">
-                                        <img src="assets/images/portfolio/portfolio-01.jpg" alt="Product Images">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/800px-Flag_of_Scotland.svg.png" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -341,7 +341,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="">
-                                        <img src="assets/images/portfolio/portfolio-02.jpg" alt="Product Images">
+                                        <img src="https://cdn.britannica.com/62/4962-004-7D6CF6DB/Flag-Wales.jpg" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
@@ -353,7 +353,7 @@
                             <li class="recent-post">
                                 <div class="thumbnail">
                                     <a href="">
-                                        <img src="assets/images/portfolio/portfolio-03.jpg" alt="Product Images">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" width="100" height="100" alt="Product Images">
                                     </a>
                                 </div>
                                 <div class="content">
