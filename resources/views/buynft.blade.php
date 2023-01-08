@@ -124,7 +124,7 @@
                              </div>
                          </div>
                      </div>
-                     <a class="btn btn-primary-alta" href="#">Unlockable content included</a>
+                     <button class="btn btn-primary-alta" data-bs-toggle="modal" data-bs-target="#exampleModal" >Unlockable content included</button>
                      <div class="rn-bid-details">
                          <div class="tab-wrapper-one">
                              <nav class="tab-button-one">
