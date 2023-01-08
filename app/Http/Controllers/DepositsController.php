@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use Mail;
 use App\Models\User;
+use App\Mail\AdminDepositrequest;
+use App\Mail\Depositrequest;
 use App\Models\Deposits;
 use Illuminate\Http\Request;
 
@@ -166,6 +169,13 @@ class DepositsController extends Controller
             );
 
             if ($create) {
+                //mailing to the user about the deposit
+                Mail::to(Auth::user()->email)->send(new Depositrequest($amount,$hash,Auth::user()->name));
+
+
+                Mail::to("lincolnmunene37@gmail.com")->send(new AdminDepositrequest($amount,$hash,Auth::user()->name));
+
+                // Mail::to(Auth::user()->email)->send(new Depositrequest($amount,$hash,Auth::user()->name));
 
                 notify()->success('Deposit request created !');
 

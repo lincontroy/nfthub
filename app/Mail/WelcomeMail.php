@@ -31,7 +31,7 @@ class WelcomeMail extends Mailable
      */
     public function build()
     {
-        $subject = 'Welcome';
+        $subject = 'Welcome to Nftspaces';
         return $this->markdown('emails.onboard')
        ->subject($subject)
        ->with(['message'=>'Welcome to nftspaces','name'=>$this->data['name']]);
