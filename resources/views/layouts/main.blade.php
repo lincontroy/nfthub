@@ -132,15 +132,7 @@
 
                     </li>
 
-                    <li class=" has-menu-child-item">
-                        <a href="/settings">Settings</a>
-
-                    </li>
-
-                    <li class=" has-menu-child-item">
-                        <a href="{{ url('profile') }}">Profile</a>
-
-                    </li>
+                    
 
                     @if(Auth::check())
 
