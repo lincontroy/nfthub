@@ -124,7 +124,7 @@
                              </div>
                          </div>
                      </div>
-                     <button class="btn btn-primary-alta" data-bs-toggle="modal" data-bs-target="#exampleModal" >Unlockable content included</button>
+                     <button class="btn btn-primary-alta" data-bs-toggle="modal" data-bs-target="#exampleModal" >Buy NFT</button>
                      <div class="rn-bid-details">
                          <div class="tab-wrapper-one">
                              <nav class="tab-button-one">
