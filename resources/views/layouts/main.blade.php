@@ -108,33 +108,64 @@
                     <div class="mainmenu-wrapper">
                         <nav id="sideNav" class="mainmenu-nav d-none d-xl-block">
                             <!-- Start Mainmanu Nav -->
-                            <ul class="mainmenu">
-                                <li class="has-menu-child-item">
-                                    <a href="/">Home</a>
+                           <!-- Start Mainmanu Nav -->
+                <ul class="mainmenu">
+                    <li class="has-menu-child-item">
+                        <a href="/">Home</a>
 
-                                </li>
-
-                                <li class="has-menu-child-item">
-                                    <a href="{{ url('/#mp') }}">Marketplace</a>
-
-                                </li>
-                                <li class="has-menu-child-item">
-                                    <a href="/home">My collection</a>
-                                </li>
-
-                                <li class=" has-menu-child-item">
-                                    <a href="/settings">Settings</a>
-
-                                </li>
-
-                                <li class=" has-menu-child-item">
-                                    <a href="/profile">Profile</a>
-
-                                </li>
+                    </li>
 
 
+                    <li class="has-menu-child-item">
+                        <a href="{{ url('deposit') }}">Deposit</a>
+                    </li>
 
-                            </ul>
+                    <li class="has-menu-child-item">
+                        <a href="{{ url('withdraw') }}">Withdraw</a>
+                    </li>
+
+                    <li class="has-menu-child-item">
+                        <a href="{{ url('home') }}">My collection</a>
+                    </li>
+                    <li class="has-menu-child-item">
+                        <a href="{{ url('/#mp') }}">Marketplace</a>
+
+                    </li>
+
+                    <li class=" has-menu-child-item">
+                        <a href="/settings">Settings</a>
+
+                    </li>
+
+                    <li class=" has-menu-child-item">
+                        <a href="{{ url('profile') }}">Profile</a>
+
+                    </li>
+
+                    @if(Auth::check())
+
+                        <li class=" has-menu-child-item">
+                            <a href="{{ url('logout') }}">Logout</a>
+
+                        </li>
+                    @else
+
+                        <li class=" has-menu-child-item">
+                            <a href="{{ url('register') }}">Register</a>
+
+                        </li>
+                        <li class=" has-menu-child-item">
+                            <a href="{{ url('login') }}">Login</a>
+
+                        </li>
+
+
+
+                    @endif
+
+
+                </ul>
+                <!-- End Mainmanu Nav -->
                             <!-- End Mainmanu Nav -->
                         </nav>
                     </div>
