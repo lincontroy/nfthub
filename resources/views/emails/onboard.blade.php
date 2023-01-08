@@ -7,7 +7,7 @@ sale of Nfts today.
 #How to start earning
 1. Signup and verify your account.
 2. Purchase nft from our marketplace.
-3. Sell or HODL the nft to increase its market value.
+3. HODL(Hold) the nft to increase its market value for a minimum of two weeks.
 4. Earn by the sale.
 
 
