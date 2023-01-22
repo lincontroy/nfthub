@@ -219,8 +219,8 @@
                     @else
                         <div class="setting-option header-btn rbt-site-header" id="rbt-site-header">
                             <div class="icon-box">
-                                <a id="connectbtn" class="btn btn-primary-alta btn-small" href="/login">Wallet
-                                    connect</a>
+                                <a id="connectbtn" class="btn btn-primary-alta btn-small" href="/login">
+                                    Account</a>
                             </div>
                         </div>
                     @endif
