@@ -29,7 +29,7 @@
                             @csrf
                             <div class="mb-5">
                                 <label for="contact-name" class="form-label">Wallet address (Tron network)</label>
-                                <input name="contact-name" id="contact-name" value="0x055D6A3B2884b0494663E465621AC861d3cc788B" type="text" readonly>          
+                                <input name="contact-name" id="contact-name" value="{{env('USDT_ADDRESS')}}" type="text" readonly>          
                             </div>
                             <div class="mb-5">
                                 <label for="contact-email" class="form-label">Enter amount in usdt</label>

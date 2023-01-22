@@ -212,11 +212,6 @@ class MarketplaceController extends Controller
             return redirect('home');
         }
 
-        
-        
-
-        
-
     }
 
     /**
