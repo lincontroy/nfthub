@@ -87,12 +87,12 @@
                              </div>
                          </div>
                      </div>
-                     <span class="bid">Height bid <span class="price">{{$collection->price}}</span></span>
+                     <span class="bid" style="color:green">1% daily increase</span>
                      <h6 class="title-name">
-                         #22 Portal , Info {{$collection->ref}}
+                        NFT REFERENCE:  {{$collection->ref}}
                      </h6>
                      <div class="catagory-collection">
-                         <div class="catagory">
+                         <!-- <div class="catagory">
                              <span>Catagory <span class="color-body">
                                      10% royalties</span></span>
                              <div class="top-seller-inner-one">
@@ -122,9 +122,9 @@
                                      </div>
                                  </div>
                              </div>
-                         </div>
+                         </div> -->
                      </div>
-                     <button class="btn btn-primary-alta" data-bs-toggle="modal" data-bs-target="#exampleModal" >Buy NFT</button>
+                     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" >Buy NFT</button>
                      <div class="rn-bid-details">
                          <div class="tab-wrapper-one">
                              <nav class="tab-button-one">
@@ -280,7 +280,7 @@
 
 
 
-                         <button class="btn btn-primary-alta mt--30" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy nft</button>
+                         <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy nft</button>
 
                          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                              <div class="modal-dialog">
