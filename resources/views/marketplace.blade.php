@@ -410,10 +410,10 @@ $nfts = App\Models\Marketplace::all();
                             </div>
                             <div class="product-share-wrapper">
                                 <div class="profile-share">
-                                    <a href="" class="avatar" data-tooltip="Mark JOrdan"><img src="assets/images/client/client-2.png" alt="Nft_Profile"></a>
-                                    <a href="" class="avatar" data-tooltip="Mark"><img src="assets/images/client/client-3.png" alt="Nft_Profile"></a>
-                                    <a href="" class="avatar" data-tooltip="Jordan"><img src="assets/images/client/client-5.png" alt="Nft_Profile"></a>
-                                    <a class="more-author-text" href="#">20+ Place Bit.</a>
+                                    <!-- <a href="" class="avatar" data-tooltip="Mark JOrdan"><img src="assets/images/client/client-2.png" alt="Nft_Profile"></a> -->
+                                    <!-- <a href="" class="avatar" data-tooltip="Mark"><img src="assets/images/client/client-3.png" alt="Nft_Profile"></a> -->
+                                    <!-- <a href="" class="avatar" data-tooltip="Jordan"><img src="assets/images/client/client-5.png" alt="Nft_Profile"></a> -->
+                                    <a style="color:green">1% increase daily</a>
                                 </div>
                                 <div class="share-btn share-btn-activation dropdown">
                                     <button class="icon" data-bs-toggle="dropdown" aria-expanded="false">
