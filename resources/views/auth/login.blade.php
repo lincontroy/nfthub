@@ -35,6 +35,9 @@
                             
                             <button type="submit" class="btn btn-primary mr--15">Login</button>
                             <a href="/register" class="btn btn-primary-alta">Sign up</a>
+
+                            <br><br>
+                            <a href="/forgot-password" style="color:black">Forgot password</a>
                         </form>
                     </div>
                 </div>

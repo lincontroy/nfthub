@@ -1,10 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+
+    <!-- register form -->
+    <div class="login-area rn-section-gapTop">
+        <div class="container">
+            <div class="row g-5">
+                <div class="offset-2 col-lg-6 col-md-8 ml_md--0 ml_sm--0 col-sm-12">
+                    <div class="form-wrapper-one registration-area">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
@@ -20,7 +23,7 @@
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
@@ -43,5 +46,6 @@
             </div>
         </div>
     </div>
+        </div>
 </div>
 @endsection

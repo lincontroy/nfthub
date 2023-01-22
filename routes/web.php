@@ -20,6 +20,12 @@ Route::get('/', function () {
 
 Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
 
+Route::get('/forgot-password', function () {
+    return view('auth.passwords.email');
+})->middleware('guest')->name('password.request');
+Route::get('/reset-password/{token}', function ($token) {
+    return view('auth.password.reset', ['token' => $token]);
+})->middleware('guest')->name('password.reset');
 
 Route::get('tier1', [App\Http\Controllers\NftController::class, 'addpricevaluetier1']);
 Route::get('tier2', [App\Http\Controllers\NftController::class, 'addpricevaluetier2']);
